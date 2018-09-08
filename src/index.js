@@ -5,4 +5,3 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Contatos from './pages/Contatos';
 
 ReactDOM.render(<Contatos />, document.getElementById('root'));
-registerServiceWorker();

@@ -20,6 +20,10 @@ export default class Contatos extends Component {
     })
   }
 
+  renderCrushs = list => {
+    return list.map((c, index)=> <Crush key={index} nome={c.nome} apelido={c.apelido} whatsapp={c.whatsapp} nota={c.nota} foto={c.foto} descricao={c.observacoes}/>)
+  }
+
   render() {
     const {crushList} = this.state
     return (
@@ -33,7 +37,9 @@ export default class Contatos extends Component {
           <h1 className="text-center">Agenda de crushs</h1>
         <Row>
             {
-              crushList.map(c => <Crush nome={c.name} apelido={c.username} whatsapp={c.phone}/>)
+             crushList.result && crushList.result.length > 0 ? (
+                this.renderCrushs(crushList.result)
+              ) : null
             }
         </Row>
       </Container>

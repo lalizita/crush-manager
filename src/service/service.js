@@ -13,4 +13,6 @@ import axios from 'axios'
 //     }]
 // }
 
-export const getCrushs = () => axios.get(`https://jsonplaceholder.typicode.com/users`)
+export const getCrushs = () => axios.get(`https://crush-management.herokuapp.com/api/crushs`)
+
+export const newCrush = () => axios.post(`https://crush-management.herokuapp.com/api/crushs`)

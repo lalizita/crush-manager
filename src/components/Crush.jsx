@@ -7,12 +7,10 @@ import ReactStars from 'react-stars'
 
 export default class Crush extends Component {
   render() {
-    console.log(this.props)
     return (
       <Col md={4}>
         <Card style={{marginBottom:10}} className="text-center">
           <div className="card-crush-image" style={{backgroundImage:`url(${this.props.foto})`}}></div>
-          {/* <CardImg top className="card-crush-image" width="100%" src={this.props.foto} alt="Card image cap" /> */}
           <CardBody>
             <CardTitle>{this.props.nome}</CardTitle>
            <div className="text-center">

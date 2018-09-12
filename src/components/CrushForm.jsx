@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import ReactStars from 'react-stars'
+import {newCrush} from '../service/service'
 
 class CrushForm extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class CrushForm extends Component {
       nome: '',
       apelido: '',
       whatsapp: '',
-      caracteristicas: '',
+      observacoes: '',
       foto: '',
       nota: 1
     }
@@ -27,11 +28,12 @@ class CrushForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    alert(`Crush ${this.state.nome} cadastrado`)
+    newCrush(this.state)
+    // alert(`Crush ${this.state.nome} cadastrado`)
   }
 
   render() {
-    const { nome, apelido, whatsapp, caracteristicas, foto } = this.state
+    const { nome, apelido, whatsapp, observacoes, foto } = this.state
     return (
       <Container>
         <Row>
@@ -53,7 +55,7 @@ class CrushForm extends Component {
                 </FormGroup>
                 <FormGroup>
                   <Label>Características físicas:</Label>
-                  <Input value={caracteristicas} name="caracteristicas" onChange={this.handleChange} />
+                  <Input value={observacoes} name="observacoes" onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
                   <Label>Endereço da foto:</Label>
@@ -77,6 +79,7 @@ class CrushForm extends Component {
                     count={5}
                     onChange={this.handleNoteChange}
                     size={50}
+                    half={false}
                     value={this.state.nota}
                     color2={'#ffd700'} />
                 </FormGroup>

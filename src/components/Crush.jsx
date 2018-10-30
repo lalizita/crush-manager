@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {
-  Col, Card, CardImg, CardBody,
-  CardTitle
+  Col, Card, CardBody, CardTitle
 } from 'reactstrap';
 import ReactStars from 'react-stars'
 

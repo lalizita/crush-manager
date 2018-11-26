@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  crush-manager:
+    container_name: crush-manager
+    build:
+       context: ./
+    image: crush-manager:1.0
+    volumes:
+      - ./:/var/www/app
+    ports:
+      - 3000:3000

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col, Button } from 'reactstrap'
 import Crush from '../components/Crush'
 import CrushForm from '../components/CrushForm'
-import {getCrushs} from '../service/service'
+import * as service from '../service/service'
 
 export default class Contatos extends Component {
   constructor(props){
@@ -12,16 +12,20 @@ export default class Contatos extends Component {
     }
   }
 
-  componentWillMount = () => {
-    getCrushs()
+  componentDidMount = () => {
+    return service.getCrushs()
     .then(res => {
+      console.log("CONSOLE LOG")
+      console.log(res)
       const crushList = res.data
       this.setState({crushList})
     })
   }
 
   renderCrushs = list => {
-    return list.map((c, index)=> <Crush key={index} nome={c.nome} apelido={c.apelido} whatsapp={c.whatsapp} nota={c.nota} foto={c.foto} descricao={c.observacoes}/>)
+    return list.map((c, index)=> <Crush key={index} 
+    crushId={c._id} nome={c.nome} apelido={c.apelido} 
+    whatsapp={c.whatsapp} notas={{notaPrincipal:c.nota, notaDeAtitude:c.notaatitude, notaDeResponsabilidade:c.notaresponsabilidade}} foto={c.foto} descricao={c.observacoes}/>)
   }
 
   render() {

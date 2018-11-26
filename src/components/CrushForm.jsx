@@ -12,7 +12,7 @@ class CrushForm extends Component {
       whatsapp: '',
       observacoes: '',
       foto: '',
-      nota: 1
+      nota: String(1)
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -24,12 +24,11 @@ class CrushForm extends Component {
     this.setState({ [name]: event.target.value })
   }
 
-  handleNoteChange = nota => this.setState({ nota })
+  handleNoteChange = nota => this.setState({ nota : String(nota)})
 
   handleSubmit = event => {
     event.preventDefault()
     newCrush(this.state)
-    // alert(`Crush ${this.state.nome} cadastrado`)
   }
 
   render() {

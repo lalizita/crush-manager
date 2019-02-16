@@ -24,7 +24,7 @@ export default class Contatos extends Component {
 
   renderCrushs = list => {
     return list.map((c, index)=> <Crush key={index} 
-    crushId={c._id} nome={c.nome} apelido={c.apelido} 
+    crushId={c._id} nome={c.nome} comoConheceu={c.comoconheceu} apelido={c.apelido} 
     whatsapp={c.whatsapp} notas={{notaPrincipal:c.nota, notaDeAtitude:c.notaatitude, notaDeResponsabilidade:c.notaresponsabilidade}} foto={c.foto} descricao={c.observacoes}/>)
   }
 

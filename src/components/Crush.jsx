@@ -48,6 +48,7 @@ export default class Crush extends Component {
             <div><b>WhatsApp:</b>{this.props.whatsapp}</div>
             <div><b>Características Físicas:</b>{this.props.descricao} </div>
             <div><b>Apelido:</b>{this.props.apelido}</div>
+            <div><b>Como conheceu:</b>{this.props.comoConheceu}</div>
             <Button color="danger" onClick={this.deleteCrush.bind(this, this.props.crushId)}>Deletar crush</Button>
           </CardBody>
         </Card>
